@@ -5,4 +5,15 @@ describe('PHP Travels', () => {
       loginPO.open();
       loginPO.validateUrl();
   })
+
+  it('test new window', () => {
+    browser.url('http://google.com')
+    browser.newWindow("https://www.google.com", 'Google');
+    browser.pause(5000);
+    browser.newWindow("https://www.amazon.com", 'Amazon');
+    browser.pause(5000);
+    browser.newWindow("https://www.paypal.com", 'Paypal');
+    browser.pause(5000);
+})
+
 })
