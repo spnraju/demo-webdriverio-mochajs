@@ -1,15 +1,37 @@
-import Page from './base.page';
-import assert from 'assert';
+import Base from './Base.page';
 
-const URL = 'https://www.phptravels.net/';
+const userNameInput = '#user-name';
+const passWordInput = '#password';
+const loginButton = '#login-button';
+const errorMessage = '.error-message-container.error';
 
-class Login extends Page {
-  open() {
-    browser.url(URL);
-    browser.$('body').waitForExist(30000);
+class Login extends Base {
+  constructor() {
+    super(loginButton);
   }
-  validateUrl() {
-    assert.equal(browser.getUrl(), URL);
+
+  async open() {
+    await super.open('/');
+  }
+
+  async setUserName(userName) {
+    await $(userNameInput).waitForEnabled();
+    await $(userNameInput).setValue(userName);
+  }
+
+  async setPassword(password) {
+    await $(passWordInput).waitForEnabled();
+    await $(passWordInput).setValue(password);
+  }
+
+  async loginSubmit() {
+    await $(loginButton).waitForClickable();
+    await $(loginButton).click();
+  }
+
+  async isErrorMessageVisible() {
+    await $(errorMessage).waitForDisplayed();
+    return await $(errorMessage).isDisplayed();
   }
 }
 
