@@ -9,13 +9,19 @@ on:
       - main
 
 jobs:
-  chromeHeadLess:
-    name: Chrome Headless
-    runs-on: windows-latest
+  webdriverio:
+    name: ${{ matrix.browser }}
+    runs-on: macos-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        browser: [chrome, firefox]
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
           node-version: 16
       - run: npm install --force
-      - run: npm test
+      - uses: browser-actions/setup-firefox@latest
+        if: matrix.browser == 'firefox'
+      - run: npm run test:${{ matrix.browser }}

@@ -4,6 +4,8 @@
   "description": "Demo Webdriverio and Mochajs integration",
   "scripts": {
     "test": "wdio config/wdio.conf.js",
+    "test:chrome": "wdio config/wdio.conf.js",
+    "test:firefox": "wdio config/wdio.firefox.conf.js",
     "lint": "eslint --ext .js . --fix",
     "prettier": "prettier **/*.js --write",
     "prepare": "husky install",
@@ -37,10 +39,12 @@
     "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-wdio": "^7.20.6",
+    "geckodriver": "^3.0.2",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "wdio-chromedriver-service": "^7.3.2",
+    "wdio-geckodriver-service": "^3.0.2",
     "wdio-mochawesome-reporter": "^4.0.0"
   }
 }

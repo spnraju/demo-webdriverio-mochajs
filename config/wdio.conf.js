@@ -3,7 +3,7 @@ exports.config = {
   specs: ['./tests/**/*.test.js'],
   exclude: [],
   maxInstances: 1,
-  services: ['chromedriver'],
+  services: ['chromedriver', 'geckodriver'],
   capabilities: [
     {
       maxInstances: 1,
