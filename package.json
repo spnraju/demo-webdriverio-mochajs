@@ -45,6 +45,6 @@
     "prettier": "^2.7.1",
     "wdio-chromedriver-service": "^7.3.2",
     "wdio-geckodriver-service": "^3.0.2",
-    "wdio-mochawesome-reporter": "^2.0.1"
+    "wdio-mochawesome-reporter": "^4.0.0"
   }
 }
