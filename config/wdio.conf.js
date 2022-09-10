@@ -20,15 +20,7 @@ exports.config = {
   connectionRetryTimeout: 120000,
   connectionRetryCount: 3,
   framework: 'mocha',
-  reporters: [
-    'spec',
-    [
-      'mochawesome',
-      {
-        outputDir: './results',
-      },
-    ],
-  ],
+  reporters: ['spec'],
   mochaOpts: {
     ui: 'bdd',
     timeout: 60000,
