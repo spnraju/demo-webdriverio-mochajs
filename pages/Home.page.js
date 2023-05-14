@@ -1,6 +1,6 @@
 import Base from './Base.page';
 
-const peekLogo = '.peek';
+const peekLogo = '.app_logo';
 
 class Home extends Base {
   constructor() {

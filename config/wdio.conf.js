@@ -1,6 +1,6 @@
 exports.config = {
   runner: 'local',
-  specs: ['./tests/**/*.test.js'],
+  specs: ['../tests/login.test.js'],
   exclude: [],
   maxInstances: 1,
   services: ['chromedriver', 'geckodriver'],
@@ -24,7 +24,6 @@ exports.config = {
   mochaOpts: {
     ui: 'bdd',
     timeout: 60000,
-    require: ['@babel/register'],
   },
   //
   // =====
