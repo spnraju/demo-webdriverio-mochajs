@@ -9,7 +9,7 @@
     "lint": "eslint --ext .js . --fix",
     "prettier": "prettier **/*.js --write",
     "prepare": "husky install",
-    "update": "npx npm-check-updates --upgrade && npm install --legacy-peer-deps && npm audit fix --force"
+    "update": "npm update --save"
   },
   "repository": {
     "type": "git",
