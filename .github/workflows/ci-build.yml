@@ -20,8 +20,8 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: 16
-      - run: yarn install --force
+          node-version: 20
+      - run: yarn install
       - uses: browser-actions/setup-firefox@latest
         if: matrix.browser == 'firefox'
       - run: yarn run test:${{ matrix.browser }}
